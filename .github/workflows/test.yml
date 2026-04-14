@@ -99,8 +99,8 @@ jobs:
         with:
           push: true
           tags: |
-            kaw393939/601_module9:latest
-            kaw393939/601_module9:${{ github.sha }}
+            nafishamamti/assignment10_is601:latest
+            nafishamamti/assignment10_is601:${{ github.sha }}
           platforms: linux/amd64,linux/arm64
-          cache-from: type=registry,ref=kaw393939/601_module9:cache
+          cache-from: type=registry,ref=nafishamamti/assignment10_is601:cache
           cache-to: type=inline,mode=max
