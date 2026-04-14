@@ -1,9 +1,7 @@
-version: '3.8'
-
 services:
   web:
     build: .
-    container_name: fastapi_calculator
+    container_name: fastapi_calculator_m10
     ports:
       - "8000:8000"
     volumes:
@@ -21,13 +19,11 @@ services:
       - app-network
 
   db:
-    image: postgres
-    container_name: postgres_db
+    image: postgres:17
+    container_name: postgres_db_m10
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      # If you'd like, set this to 'fastapi_db' for dev,
-      # but we'll also manually create fastapi_test_db in conftest.py or via init script
       POSTGRES_DB: fastapi_db
     ports:
       - "5432:5432"
@@ -43,7 +39,7 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
-    container_name: pgadmin
+    container_name: pgadmin_m10
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@example.com
       PGADMIN_DEFAULT_PASSWORD: admin
